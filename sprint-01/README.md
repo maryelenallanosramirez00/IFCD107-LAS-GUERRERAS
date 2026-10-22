@@ -1,7 +1,7 @@
 # Sprint 1 · Entregable
 
-- **Reto:** *Plantillas del equipo · acuerdo de trabajo, Definition of Done y backlog del curso*
-- **Qué se entrega:** *plantillas_equipo.md*, *empatia_hmw_plantillas.md*
+- **Reto:** *Plantillas del equipo · acuerdo de trabajo, Definition of Done y backlog del curso*, Dinámica C · ¿Qué familia de algoritmos elegimos?*
+- **Qué se entrega:** *plantillas_equipo.md*, *empatia_hmw_plantillas.md*, *tarjetas_casos_uso.md*
 - **Quién hizo qué:**
   - Persona 1: Mary Elena Llanos Ramírez- Scrum Master
   - Persona 2: Marisol Monroy 
