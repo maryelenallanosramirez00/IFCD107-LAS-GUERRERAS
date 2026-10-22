@@ -5,10 +5,16 @@
 ## Equipo
 
 | Persona | Usuario de GitHub | Rol en el sprint actual |
-|---|---|---|
-| | | |
-| | | |
-| | | |
+|Marisol Monroy|---|---|
+|Mary Elena Llanos Ramírez|maryelenallanosramirez00|crum Master|
+|Cande Pérez Mesa | | |
+|Montse Salazar Hernández | | |
+|Juan José Abreu Socorro | | |
+
+
+
+
+
 
 ## Cómo está organizado
 
