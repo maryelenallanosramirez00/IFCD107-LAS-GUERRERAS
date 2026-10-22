@@ -1,7 +1,7 @@
 # Sprint 1 · Entregable
 
 - **Reto:** *Plantillas del equipo · acuerdo de trabajo, Definition of Done y backlog del curso*
-- **Qué se entrega:** *plantillas_equipo.md*
+- **Qué se entrega:** *plantillas_equipo.md*, *empatia_hmw_plantillas.md*
 - **Quién hizo qué:**
   - Persona 1: Elena - Scrum Master
   - Persona 2: Marisol
