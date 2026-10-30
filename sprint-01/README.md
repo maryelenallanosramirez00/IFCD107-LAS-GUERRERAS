@@ -7,5 +7,4 @@
   - Persona 2: Marisol Monroy 
   - Persona 3: Cande Pérez Mesa
   - Persona 4: Montse Salazar Hernández
-  - Persona 5: Juan José Abreu Socorro
 - **Cómo reproducirlo:** *(pasos para ejecutarlo; si es un notebook, ábrelo en Colab y ejecútalo de arriba abajo)*
