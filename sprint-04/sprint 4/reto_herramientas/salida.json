@@ -1,0 +1,16 @@
+{
+  "reservas_analizadas": 6000,
+  "ocupacion_proxy_pct": 42.0,
+  "ingreso_medio_por_reserva": 576.04,
+  "tasa_cancelacion_por_canal_pct": {
+    "empresa": 43.3,
+    "directo": 31.5,
+    "web_intermediaria": 53.9,
+    "agencia": 44.0
+  },
+  "calidad": {
+    "filas_validas": 6000,
+    "filas_descartadas": 0,
+    "avisos": []
+  }
+}

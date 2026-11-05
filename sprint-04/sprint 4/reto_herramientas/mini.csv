@@ -1,0 +1,4 @@
+fecha_llegada,noches,precio_noche,canal,cancelada
+2025-01-01,2,100.0,directo,0               ← fila 2: buena
+2025-01-03,3,,agencia,0                    ← fila 3: mala (falta el precio)
+2025-01-05,0,50.0,web_intermediaria,1      ← fila 4: mala (0 noches)
