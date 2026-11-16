@@ -1,9 +1,10 @@
 # Sprint 8 · Entregable
 
-- **Reto:** *(copia el nombre del reto de la ficha del sprint)*
-- **Qué se entrega:** *(notebook, documento…)*
+- **Reto:** Duelo de modelos.
+- **Qué se entrega:** `reto_S08.ipynb`, `leaderboard_S08.csv`, `model_card.md`, `README.md` y autoevaluaciones individuales.
 - **Quién hizo qué:**
-  - Persona 1:
-  - Persona 2:
-  - Persona 3:
-- **Cómo reproducirlo:** *(pasos para ejecutarlo; si es un notebook, ábrelo en Colab y ejecútalo de arriba abajo)*
+  - **Cande:** LightGBM, SVM y primera búsqueda de hiperparámetros.
+  - **Montse:** Baseline, logística, árbol y Random Forest.
+  - **Marysol:** Segunda búsqueda de hiperparámetros y análisis de sensibilidad.
+  - **Elena:** Model Card y README.
+- **Cómo reproducirlo:** Abrir `reto_S08.ipynb` en Google Colab y ejecutar todas las celdas de arriba abajo. Mantener los archivos necesarios en la carpeta del proyecto.
