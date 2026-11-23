@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA VISUAL | Laboratorio de visión artificial</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2e;--panel2:#18233b;--line:#293653;--text:#eef3ff;--muted:#9eacc8;--purple:#9b8cff;--cyan:#5dd6df;--green:#65d6a4;--orange:#ffbd69}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#20234a 0,transparent 35%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,Segoe UI,sans-serif}
+button,input{font:inherit}.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}.sidebar{padding:28px 18px;background:#0d1426;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:28px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:19px;letter-spacing:.4px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:grid;place-items:center;color:#10172a;font-size:22px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.5px;font-weight:600}.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#71809e;margin:8px 10px}.nav button{width:100%;border:0;background:transparent;color:var(--muted);text-align:left;padding:12px;border-radius:10px;cursor:pointer;margin:3px 0}.nav button.active,.nav button:hover{background:#202a46;color:white}.nav button span{display:inline-block;width:27px}.side-note{margin-top:auto;padding:15px;border:1px solid var(--line);border-radius:13px;color:var(--muted);font-size:12px}.side-note b{color:var(--orange);display:block;margin-bottom:5px}.main{padding:30px clamp(18px,4vw,54px);max-width:1500px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}.eyebrow{color:var(--cyan);font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700}.top h1{font-size:clamp(25px,3vw,35px);margin:5px 0}.sub{color:var(--muted);margin:0}.status{border:1px solid #375b58;background:#142d32;color:var(--green);border-radius:30px;padding:8px 13px;font-size:12px;white-space:nowrap}.view{display:none}.view.active{display:block}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card{background:linear-gradient(150deg,#151f36,#11192c);border:1px solid var(--line);border-radius:17px;padding:21px;box-shadow:0 12px 35px #0002}.card h2{font-size:17px;margin:0 0 5px}.muted{color:var(--muted)}.upload{border:1.5px dashed #526184;border-radius:14px;min-height:250px;display:grid;place-items:center;text-align:center;padding:22px;margin-top:17px;background:#0e172a;cursor:pointer;overflow:hidden}.upload:hover{border-color:var(--cyan)}.upload input{display:none}.upload-icon{font-size:38px;margin-bottom:8px}.upload strong{display:block;font-size:16px}.upload p{color:var(--muted);font-size:12px;margin:5px 0 13px}.preview{max-width:100%;max-height:290px;border-radius:10px;display:none;object-fit:contain}.btn{border:0;border-radius:10px;padding:11px 16px;background:linear-gradient(110deg,var(--purple),#6cbfe9);color:#10172a;font-weight:750;cursor:pointer}.btn:disabled{opacity:.4;cursor:not-allowed}.btn.secondary{background:#263452;color:var(--text);border:1px solid #3b4a6a}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.result-empty{height:100%;min-height:250px;display:grid;place-items:center;text-align:center;color:var(--muted)}.result-empty .big{font-size:40px}.prediction{display:none}.best{font-size:25px;font-weight:800;margin:15px 0 3px}.confidence{color:var(--green);font-size:13px}.barrow{margin:17px 0}.barhead{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}.bar{height:8px;background:#27334e;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:9px}.tag{display:inline-block;background:#26334f;color:#bfc9ff;padding:4px 8px;border-radius:7px;font-size:11px}.notice{margin-top:18px;padding:12px 14px;background:#30291e;border:1px solid #66502d;border-radius:10px;color:#f2d39b;font-size:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.stat{background:#111a2e;border:1px solid var(--line);border-radius:13px;padding:17px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:25px;margin-top:5px}.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.model{background:#111a2e;border:1px solid var(--line);border-radius:13px;padding:17px}.model h3{font-size:15px;margin:0 0 5px}.metric{font-size:27px;font-weight:800;color:var(--cyan);margin:12px 0 0}.table{width:100%;border-collapse:collapse;margin-top:15px}.table td,.table th{padding:12px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}.table th{color:var(--muted);font-weight:600}.field{margin:15px 0}.field label{display:block;color:var(--muted);font-size:13px;margin-bottom:7px}.field input[type=range]{width:100%;accent-color:var(--purple)}.field select{width:100%;padding:10px;background:#0e172a;border:1px solid var(--line);border-radius:9px;color:var(--text)}.toast{color:var(--green);font-size:13px;margin-top:12px;min-height:20px}.footer{color:#71809e;font-size:11px;margin-top:28px;text-align:center}
+@media(max-width:850px){.app{grid-template-columns:1fr}.sidebar{padding:14px 18px;border-right:0;border-bottom:1px solid var(--line);gap:12px}.nav{display:flex;overflow:auto;gap:5px}.nav-label,.side-note{display:none}.nav button{white-space:nowrap;width:auto;padding:9px 12px}.main{padding-top:22px}.grid{grid-template-columns:1fr}.compare{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">✦</div><div>IA VISUAL<small>LABORATORIO DE IA</small></div></div>
+  <div class="nav-label">Espacio de trabajo</div>
+  <nav class="nav">
+    <button class="active" data-view="recognize"><span>◉</span>Reconocer imagen</button>
+    <button data-view="compare"><span>⇄</span>Comparar modelos</button>
+    <button data-view="train"><span>⚙</span>Entrenamiento</button>
+    <button data-view="evaluate"><span>▦</span>Evaluación</button>
+  </nav>
+  <div class="side-note"><b>● MODO DEMOSTRACIÓN</b>Esta interfaz es una maqueta funcional. Todavía no está conectada a los modelos TensorFlow del Colab S11_05.</div>
+</aside>
+<main class="main">
+  <header class="top"><div><div class="eyebrow">Computer vision · Sprint 11</div><h1 id="pageTitle">Reconocimiento de imágenes</h1><p class="sub" id="pageSub">Sube una fotografía y explora cómo podría interpretarla una red neuronal.</p></div><div class="status">● Prototipo local</div></header>
+
+  <section class="view active" id="recognize">
+    <div class="grid">
+      <div class="card">
+        <h2>Analizar una fotografía</h2><p class="muted">Formatos JPG, PNG o WEBP</p>
+        <label class="upload" id="dropzone">
+          <input type="file" id="fileInput" accept="image/*">
+          <div id="uploadPrompt"><div class="upload-icon">⬆</div><strong>Arrastra una imagen aquí</strong><p>o selecciona un archivo de tu dispositivo</p><span class="btn secondary">Seleccionar fotografía</span></div>
+          <img class="preview" id="preview" alt="Vista previa de la imagen">
+        </label>
+        <div class="actions"><button class="btn" id="analyze" disabled>✦ Analizar imagen</button><button class="btn secondary" id="clear">Limpiar</button></div>
+        <div class="toast" id="uploadStatus"></div>
+      </div>
+      <div class="card">
+        <h2>Resultado del análisis</h2><p class="muted">Predicciones simuladas para probar la interfaz</p>
+        <div class="result-empty" id="empty"><div><div class="big">⌁</div>Sube una imagen para comenzar<br><small>Los resultados aparecerán aquí</small></div></div>
+        <div class="prediction" id="prediction"><span class="tag">TOP 1 · PREDICCIÓN DEMO</span><div class="best" id="bestName">Paracaídas</div><div class="confidence" id="bestConfidence">Confianza simulada: 92,4 %</div><div id="bars"></div></div>
+      </div>
+    </div>
+    <div class="notice">Aviso: los porcentajes y las clases de esta demostración son ficticios. Para obtener predicciones reales conectaremos los modelos entrenados y guardados desde Google Colab.</div>
+  </section>
+
+  <section class="view" id="compare">
+    <div class="card"><h2>Duelo de modelos</h2><p class="muted">Compara los enfoques estudiados en el Colab S11_05.</p>
+      <div class="compare" style="margin-top:18px">
+        <div class="model"><span class="tag">MODELO 01</span><h3>MobileNetV2 · ImageNet</h3><p class="muted">Modelo preentrenado · 1.000 categorías</p><div class="metric">—</div><small class="muted">Precisión en tu conjunto de prueba</small></div>
+        <div class="model"><span class="tag">MODELO 02</span><h3>CNN desde cero</h3><p class="muted">Aprendizaje con las 10 clases</p><div class="metric">—</div><small class="muted">Precisión en tu conjunto de prueba</small></div>
+        <div class="model"><span class="tag">MODELO 03</span><h3>Transfer Learning</h3><p class="muted">MobileNetV2 adaptado a 10 clases</p><div class="metric">—</div><small class="muted">Precisión en tu conjunto de prueba</small></div>
+      </div>
+      <div class="notice">Los valores reales se incorporarán cuando carguemos los resultados de evaluación de cada modelo. No se muestran métricas inventadas.</div>
+    </div>
+  </section>
+
+  <section class="view" id="train">
+    <div class="card"><h2>Laboratorio de entrenamiento</h2><p class="muted">Prepara experimentos modificando los parámetros. En esta maqueta no se inicia todavía un entrenamiento real.</p>
+      <div class="field"><label for="epochs">Épocas: <b id="epochsVal">10</b></label><input id="epochs" type="range" min="1" max="50" value="10"></div>
+      <div class="field"><label for="batch">Tamaño del lote (batch size)</label><select id="batch"><option>16</option><option selected>32</option><option>64</option></select></div>
+      <div class="field"><label for="size">Tamaño de imagen</label><select id="size"><option>96 × 96</option><option>128 × 128</option><option>224 × 224</option></select></div>
+      <div class="field"><label for="augmentation">Aumento de datos</label><select id="augmentation"><option>Desactivado</option><option selected>Activado</option></select></div>
+      <button class="btn" id="saveExperiment">Guardar configuración del experimento</button><div class="toast" id="experimentStatus"></div>
+    </div>
+  </section>
+
+  <section class="view" id="evaluate">
+    <div class="card"><h2>Panel de evaluación</h2><p class="muted">Aquí mostraremos las métricas calculadas sobre el conjunto de prueba.</p>
+      <div class="stats"><div class="stat"><small>Accuracy</small><strong>—</strong></div><div class="stat"><small>Precisión / Precision</small><strong>—</strong></div><div class="stat"><small>Recall</small><strong>—</strong></div></div>
+      <h2 style="margin-top:24px">Matriz de confusión</h2><p class="muted">Filas: clase real · Columnas: clase predicha</p>
+      <div style="overflow:auto"><table class="table"><thead><tr><th>Clase</th><th>Predicción A</th><th>Predicción B</th><th>Predicción C</th></tr></thead><tbody><tr><td>Clase A</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Clase B</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Clase C</td><td>—</td><td>—</td><td>—</td></tr></tbody></table></div>
+      <div class="notice">La matriz y las métricas se generarán a partir de las predicciones reales del conjunto de prueba; esta pantalla es una plantilla.</div>
+    </div>
+  </section>
+  <div class="footer">IA VISUAL · Proyecto educativo de visión artificial · Basado en el trabajo del Colab S11_05</div>
+</main>
+</div>
+<script>
+const navButtons=[...document.querySelectorAll('.nav button')];
+const titles={recognize:['Reconocimiento de imágenes','Sube una fotografía y explora cómo podría interpretarla una red neuronal.'],compare:['Comparación de modelos','Analiza las diferencias entre los tres enfoques de aprendizaje.'],train:['Entrenamiento de modelos','Diseña experimentos y modifica los hiperparámetros.'],evaluate:['Evaluación y resultados','Consulta las métricas y los errores de clasificación.']};
+navButtons.forEach(b=>b.addEventListener('click',()=>{navButtons.forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===b.dataset.view));document.getElementById('pageTitle').textContent=titles[b.dataset.view][0];document.getElementById('pageSub').textContent=titles[b.dataset.view][1]}));
+const input=document.getElementById('fileInput'),preview=document.getElementById('preview'),prompt=document.getElementById('uploadPrompt'),analyze=document.getElementById('analyze'),status=document.getElementById('uploadStatus');
+let selectedFile=null;
+function loadFile(file){if(!file)return;if(!file.type.startsWith('image/')){status.textContent='Selecciona un archivo de imagen válido.';return}selectedFile=file;preview.src=URL.createObjectURL(file);preview.style.display='block';prompt.style.display='none';analyze.disabled=false;status.textContent='Imagen cargada: '+file.name;document.getElementById('empty').style.display='grid';document.getElementById('prediction').style.display='none'}
+input.addEventListener('change',e=>loadFile(e.target.files[0]));
+const dz=document.getElementById('dropzone');dz.addEventListener('dragover',e=>{e.preventDefault();dz.style.borderColor='var(--cyan)'});dz.addEventListener('dragleave',()=>dz.style.borderColor='');dz.addEventListener('drop',e=>{e.preventDefault();dz.style.borderColor='';loadFile(e.dataTransfer.files[0])});
+document.getElementById('clear').addEventListener('click',()=>{selectedFile=null;input.value='';preview.removeAttribute('src');preview.style.display='none';prompt.style.display='block';analyze.disabled=true;status.textContent='';document.getElementById('empty').style.display='grid';document.getElementById('prediction').style.display='none'});
+document.getElementById('analyze').addEventListener('click',()=>{if(!selectedFile)return;const examples=[['Paracaídas',92.4,[['Paracaídas',92.4],['Pelota de golf',5.1],['Surtidor',2.5]],''],['Camión de basura',87.8,[['Camión de basura',87.8],['Radiocasete',8.4],['Iglesia',3.8]],''],['Perro springer',94.1,[['Perro springer',94.1],['Tenca',3.7],['Paracaídas',2.2]],'']];const r=examples[Math.floor(Math.random()*examples.length)];document.getElementById('bestName').textContent=r[0];document.getElementById('bestConfidence').textContent='Confianza simulada: '+r[1].toFixed(1).replace('.',',')+' %';document.getElementById('bars').innerHTML=r[2].map(x=>`<div class="barrow"><div class="barhead"><span>${x[0]}</span><b>${x[1].toFixed(1).replace('.',',')}%</b></div><div class="bar"><i style="width:${x[1]}%"></i></div></div>`).join('');document.getElementById('empty').style.display='none';document.getElementById('prediction').style.display='block';});
+document.getElementById('epochs').addEventListener('input',e=>document.getElementById('epochsVal').textContent=e.target.value);
+document.getElementById('saveExperiment').addEventListener('click',()=>{document.getElementById('experimentStatus').textContent='Configuración preparada: '+document.getElementById('epochs').value+' épocas · batch '+document.getElementById('batch').value+' · '+document.getElementById('size').value+' · aumento de datos '+document.getElementById('augmentation').value.toLowerCase()+'.'});
+</script>
+</body></html>
